@@ -1,4 +1,4 @@
-module github.com/scorify/check-template
+module github.com/scorify/imap
 
 go 1.22.6
 
