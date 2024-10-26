@@ -11,6 +11,7 @@ type Schema struct {
 	Port     int    `key:"port" default:"143"`
 	Username string `key:"username"`
 	Password string `key:"password"`
+	Mailbox  string `key:"mailbox" default:"INBOX"`
 	Secure   bool   `key:"secure"`
 }
 
