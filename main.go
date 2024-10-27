@@ -27,6 +27,26 @@ func Validate(config string) error {
 		return err
 	}
 
+	if conf.Server == "" {
+		return fmt.Errorf("target is required; got %q", conf.Server)
+	}
+
+	if conf.Port <= 0 || conf.Port > 65535 {
+		return fmt.Errorf("provided invalid port: %d", conf.Port)
+	}
+
+	if conf.Username == "" {
+		return fmt.Errorf("username is required; got %q", conf.Username)
+	}
+
+	if conf.Password == "" {
+		return fmt.Errorf("password is required; got %q", conf.Password)
+	}
+
+	if conf.Mailbox == "" {
+		return fmt.Errorf("mailbox is required; got %q", conf.Password)
+	}
+
 	return nil
 }
 
